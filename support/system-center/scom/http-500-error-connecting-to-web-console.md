@@ -151,10 +151,14 @@ To configure constraint delegations, follow these steps:
         Right-click the user that's configured on the custom identity (Lab\SCOMAppPool) and select **Properties**.
 
 4. In the details pane, select **Delegation**.
-5. On the **Delegation** tab, select **Trust this computer for delegation to specified services only** > **Use Kerberos only**.
-6. Select **Add**.
-7. In the **Add Services** dialog box, select **Users or Computers**.
-8. In the **Select Users or Computers** dialogue box, specify the account according to different scenarios:
+5. On the **Delegation** tab, select **Trust this computer for delegation to specified services only** > and select as below:
+
+    - Kernel Mode Authentication is enabled: **Use any authentication protocol**
+    - Kernel Mode Authentication is Disabled: **Use Kerberos only** (Refer to [Disable Kernel-mode Authentication in IIS.](#disable-kernel-mode-authentication-in-iis))
+  
+7. Select **Add**.
+8. In the **Add Services** dialog box, select **Users or Computers**.
+9. In the **Select Users or Computers** dialogue box, specify the account according to different scenarios:
 
     - Scenario 1: The SDK service runs under a LocalSystem account
 
@@ -163,8 +167,8 @@ To configure constraint delegations, follow these steps:
 
          Select the domain account that the SDK service runs under and select **OK**.
 
-9. In the **Add Services** dialog, select the service type **MSOMSdkSvc** and select **OK**.
-10. Select **OK** to close the **Properties** dialog box.
+10. In the **Add Services** dialog, select the service type **MSOMSdkSvc** and select **OK**.
+11. Select **OK** to close the **Properties** dialog box.
 
 ### Verify "Account is sensitive and cannot be delegated" isn't set
 
